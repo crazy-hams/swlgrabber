@@ -25,10 +25,11 @@ def tratar_csv():
 
     datos = {}
     with open(fichero_csv) as fc:
-        f = csv.DictReader(fc)
+        f = csv.DictReader(fc, delimiter=';')
 
         for filas in f:
             qrg = filas['kHz:75']
+
             datos[qrg] = filas
 
     with open(fichero_json, 'w') as fj:
