@@ -24,8 +24,8 @@ def tratar_csv():
     """
 
     datos = {}
-    with open(fichero_csv) as fc_csv:
-        f = csv.DictReader(fc_csv)
+    with open(fichero_csv) as fc:
+        f = csv.DictReader(fc)
 
         for filas in f:
             qrg = filas['kHz:75']
