@@ -36,18 +36,32 @@ def tratar_csv(fichc, fichj):
     with open(fichc) as fc:
         f = csv.DictReader(fc, delimiter=';')
         for filas in f:
+
+            # -----------------------------------
+
             qrg = filas['kHz:75']
-            if filas['Days:59'] is '':
-                filas['Days:59'] = 'all'
-            if filas['Lng:49'] is '':
-                filas['Lng:49'] = 'n/a'
+            days = filas['Days:59']
+            language = filas['Lng:49']
+            station = filas['Station:201']
+            time = filas['Time(UTC):93']
+            region = filas['ITU:49']
+            remarks = filas['Remarks:135']
+
+            if days is '':
+                days = '1234567'
+
+            if language is '':
+                language = 'n/a'
+
+            # -----------------------------------
+
             datos[qrg] = {
-                'station': filas['Station:201'],
-                'time': filas['Time(UTC):93'],
-                'days': filas['Days:59'],
-                'region': filas['ITU:49'],
-                'language': filas['Lng:49'],
-                'remarks': filas['Remarks:135']
+                'station': station,
+                'time': time,
+                'days': days,
+                'region': region,
+                'language': language,
+                'remarks': remarks
             }
 
     with open(fichj, 'w') as fj:
