@@ -58,4 +58,4 @@ if __name__ == '__main__':
     tratar_csv(f_eibi_csv, f_eibi_json)
     # tratar_csv(f_hfcc_csv, f_hfcc_json)
     # tratar_csv(f_ncb_csv, f_ncb_json)
-    # escribir_bbdd()
+    escribir_bbdd()
