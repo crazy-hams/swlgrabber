@@ -36,6 +36,9 @@ def tratar_csv(fichc, fichj):
     with open(fichc, encoding='utf-8') as fc:
         f = csv.DictReader(fc, delimiter=';')
         i=1
+
+        # print(fichc.)
+
         for filas in f:
 
             # -----------------------------------
@@ -112,8 +115,8 @@ def tratar_csv(fichc, fichj):
             elif days == 'Su-Mo': days = '71'
             elif days == 'Su'   : days = '7'
 
-            if language is '':
-                language = 'n/a'
+            if language is '': language = 'n/a'
+            if remarks is '': remarks = 'n/a'
 
             # -----------------------------------
 
